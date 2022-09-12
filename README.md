@@ -1,2 +1,2 @@
 # lenormand-julien.fr
-My personnal website
+My personal website
