@@ -10,7 +10,8 @@
     <p>TODO: flux RSS</p>
     <p>TODO: tags</p>
     <p>TODO: permalinks</p>
-    <p>TODO: javascript required?</p>
+    <p>TODO: no-js compatible ?</p>
+    <p>TODO: tailwind CSS ?</p>
     <p>Les eaux du web sont si étendues qu'on ne peut les explorer complètement, mais elles regorgent de merveilles. En voici quelques-unes que j'ai pu rencontrer.</p>
     <article>
       <h3><a href="https://marmelab.com/blog/2016/02/29/auto-documented-makefile.html">Self-Documented Makefile</a></h3>
@@ -95,6 +96,300 @@
       <h3><a href="https://git-man-page-generator.lokaltog.net/">git man page generator</a></h3>
       <p>Satire de page Git générée aléatoirement. (nécessite d'activer le javascript)</p>
       <p class="hashtags">#lol #git</p>
+    </article>
+    <article>
+      <h3><a href="https://www.earthli.com/news/view_article.php?id=3864">Rebase Considered Essential</a></h3>
+      <p>Une défense du git rebase que Fossil ne permet pas une fois que la branche a été pushée.</p>
+      <p class="hashtags">#git #fossil #scm</p>
+      <p class="date">2022-09-13</p>
+    </article>
+    <article>
+      <h3><a href="https://docs.taichi-lang.org/blog/accelerate-python-code-100x">Accelerate Python code 100x</a></h3>
+      <p>Encore un compilateur AOT pour Python.</p>
+      <p class="hashtags">#python #perf</p>
+      <p class="date">2022-09-14</p>
+    </article>
+    <article>
+      <h3><a href="https://piotrduperas.com/posts/nan-boxing">NaN boxing</a></h3>
+      <p>Optimisations typiques pour un interpréteur de langage dynamique (Python, Javascript).</p>
+      <p class="hashtags">#tagged-pointers #optimization</p>
+      <p class="date">2022-09-17</p>
+    </article>
+    <article>
+      <h3><a href="https://www.debuggex.com">Debuggex: Online visual regex tester. JavaScript, Python and PCRE.</a></h3>
+      <p>Très bon outil pour débugger des regexes : d'une part il offre une visualisation sous forme de "railroad diagram", d'autre part il permet de voir caractère par caractère comment on évolue dedans.</p>
+      <p class="hashtags">#regex #debug</p>
+      <p class="date">2022-09-20</p>
+    </article>
+    <article>
+      <h3><a href="https://grahamc.com/blog/nix-and-layered-docker-images">Optimising Docker Layers for Better Caching with Nix</a></h3>
+      <p>Comment Nix layerise les images qu'il produit afin qu'entre elles un maximum de layers soient partagés.</p>
+      <p class="hashtags">#docker #build #nix</p>
+      <p class="date">2022-09-21</p>
+    </article>
+    <article>
+      <h3><a href="https://www.goatops.com">Goat Ops</a></h3>
+      <p>Des phrases qui comparent avec humour (amer) la simplicité d'être éleveur de chèvres par rapport à DevOps. Exemples :<ul><li>- "There is no need to orchestrate goat deployments in the cloud"</li><li>- "Goats prefer neither tabs nor spaces. They are goats."</li></ul></p>
+      <p class="hashtags">#lol #devops #goat</p>
+      <p class="date">2022-09-21</p>
+    </article>
+    <article>
+      <h3><a href="https://blog.meadsteve.dev/programming/2022/09/27/making-python-fast-for-free/">Making python fast for free - adventures with mypyc</a></h3>
+      <p>Comment compiler son code Python typé pour faire x2 sur les perfs (seulement).</p>
+      <p class="hashtags">#python #perf #typing #mypy</p>
+      <p class="date">2022-09-28</p>
+    </article>
+    <article>
+      <h3><a href="https://codegolf.stackexchange.com/questions/215216/high-throughput-fizz-buzz/">High throughput Fizz Buzz</a></h3>
+      <p>Exercice d'optimisation sur le simpliste programme "FizzBuzz". Python arrive à ~0.1GiB/s, Java, Go et Rust montent à ~3, en C ça taquine le 8, et avec de l'ASM optimisé et les bons appels systèmes Linux ça peut même monter à 57 (2+ ordres de magnitudes par rapport à Python) !</p>
+      <p class="hashtags">#perf #asm #linux #syscall #codegolf</p>
+      <p class="date">2022-09-28</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/0nbkaYsR94c">You suck at Excel with Joel Spolsky</a></h3>
+      <p>Joel Spolsky, en outre fondateur de Stack Overflow et auteur de l'influentiel [blog "Joel on Software"](https://www.joelonsoftware.com/), a également été développeur à Microsoft sur Excel, il présente (dans un ton un peu dédaigneux) les fonctionnalités essentielles que pas assez de mondes connaît, en particulier la supériorité des "Tables".</p>
+      <p class="hashtags">#youtube #excel #tuto</p>
+      <p class="date">2022-09-28</p>
+    </article>
+    <article>
+      <h3><a href="https://www.uber.com/en-FR/blog/reducing-logging-cost-by-two-orders-of-magnitude-using-clp/">Reducing Logging Cost by Two Orders of Magnitude using CLP</a></h3>
+      <p>Uber a historiquement une grosse quantité de logs non-structurés (juste une string interpolée), qui prenaient trop de place (trop cher de les stocker longtemps). Ils ont mis au point un algo de compression spécialisé dans les logs, qui tire partie de leur format semi-répétitif (texte à trou, rempli par des valeurs répétées ou similaires), avec une compression classique par-dessus (mais custom pour les floats, qui réduit l'entropie de leur représentation binaire quand ils varient seulement d'un exposant base 10, ou qu'ils sont proches). C'est une optimisation largement dépendante de leur dataset, mais facile à indexer pour des recherches, et qui ne demande pas de changer le code de log.</p>
+      <p class="hashtags">#perf #logging #float</p>
+      <p class="date">2022-10-03</p>
+    </article>
+    <article>
+      <h3><a href="Semiconductor Physics">Britney Spears' Guide to</a></h3>
+      <p>http://britneyspears.ac/lasers.htm</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2022-10-04</p>
+    </article>
+    <article>
+      <h3><a href="https://github.com/minimaxir/big-list-of-naughty-strings">Big List of Naughty Strings</a></h3>
+      <p>Un fichier qui contient énormément de strings susceptibles de causer des problèmes, que ce soit d'encoding Unicode, de quoting, de parsing, d'interpolation, de rendu, ...</p>
+      <p class="hashtags">#string #parsing #testing #unicode</p>
+      <p class="date">2022-10-05</p>
+    </article>
+    <article>
+      <h3><a href="https://bitfieldconsulting.com/golang/test-last-development">Introducing Test-Last Development (TLD)</a></h3>
+      <p>J'espère que c'est de l'humour, même si je comprends pourquoi ça peut passer pour du premier degré. C'était le premier résultat Google pour ce qu'est l'Iterative Test Last (ITL) alors que l'article présente le Test Last Development (TLD).</p>
+      <p class="hashtags">#lol #testing #itl</p>
+      <p class="date">2022-10-06</p>
+    </article>
+    <article>
+      <h3><a href="http://rigaux.org/language-study/syntax-across-languages/">Syntax accross languages</a></h3>
+      <p>Beaucoup d'exemples de la syntaxe de différents langages pour la même opération, par exemple l'appel de fonction.</p>
+      <p class="hashtags">#language #design #rosetta</p>
+      <p class="date">2022-10-21</p>
+    </article>
+    <article>
+      <h3><a href="https://www.youtube.com/watch?v=c33AZBnRHks">Someone improved my code by 40,832,277,770%</a></h3>
+      <p>TL;DR: Le problème est : trouver 5 mots (anglais) de 5 lettres qui utilisent 25 lettres différentes (donc aucune en commun). Sa solution en Python faisait une recherche exhaustive et a pris 32 jours pour terminer. Des personnes ont proposé des programmes plus performants, ne prenant que quelques minutes, puis quelques secondes, enfin quelques millisecondes (d'où le titre), et en fin de vidéo 500 micro-secondes. Techniques employés :<ul><li>utiliser des langages plus performants (Java, C++, C, Rust, Julia)</li><li>former un graphe des mots qui ne partagent aucune lettre et chercher un <a href="https://en.wikipedia.org/wiki/Complete_graph">k5</a> (un pentagramme)</li><li>pruner efficacement les mots incompatibles</li><li>programmation parallèle</li><li>l'<a href="https://en.wikipedia.org/wiki/Knuth%27s_Algorithm_X">algorithme X de Donald Knuth</a> (trouver le sous-ensemble de lignes d'une matrice de 0 et 1 pour qu'il n'y ait qu'un seul 1 par colonne)</li><li>structure de données optimisée (index par les lettres du mot)</li><li>parcourir les lettres par leur <a href="https://en.wikipedia.org/wiki/Entropy_(information_theory)">entropie</a> (calculée à partir du corpus de mots possibles)</li><li>représenter les mots comme un <a href="https://en.wikipedia.org/wiki/Bit_field">bitfield</a> des lettres qu'ils contiennent, qui tient sur 32 bits, sur lequel ont peux utiliser des opérations bitwise</li><li>faire attention au cache processeur</li></ul> Et c'est un problème qui avait déjà été inventé avant en linguistiques récréatives : <a href="https://digitalcommons.butler.edu/wordways/vol1/iss1/8/">the Jotto problem</a>.</p>
+      <p class="hashtags">#lol #optimization #algo #rust</p>
+      <p class="date">2022-10-22</p>
+    </article>
+    <article>
+      <h3><a href="https://github.com/FiloSottile/mkcert">Mkcert: Simple zero-config tool to make locally trusted development certificates</a></h3>
+      <p>Alternative à devoir se coltiner OpenSSL.</p>
+      <p class="hashtags">#ca #cert #https #openssl</p>
+      <p class="date">2022-11-01</p>
+    </article>
+    <article>
+      <h3><a href="https://www.splitgraph.com/blog/poetry-dependency-resolver-sudoku">Solving Sudoku with Poetry's dependency resolver</a></h3>
+      <p>Et ça marche.</p>
+      <p class="hashtags">#lol #python #poetry</p>
+      <p class="date">2022-11-10</p>
+    </article>
+    <article>
+      <h3><a href="https://grugbrain.dev/">The Grug Brained Developer</a></h3>
+      <p>Les conseils et bonnes pratiques d'une caricature de développeur "moyen", formulé comme par un homme des cavernes. Beaucoup de pragmatisme.</p>
+      <p class="hashtags">#lol #best-practices</p>
+      <p class="date">2022-11-10</p>
+    </article>
+    <article>
+      <h3><a href="https://randsinrepose.com/archives/the-seven-levels-of-busy/">The Seven Levels of Busy</a></h3>
+      <p>A quel niveau êtes-vous actuellement ? Et à quel niveau vous sentez-vous bien ?</p>
+      <p class="hashtags">#health</p>
+      <p class="date">2022-11-17</p>
+    </article>
+    <article>
+      <h3><a href="https://westling.dev/b/extremely-linear-git">Extremely Linear Git History</a></h3>
+      <p>En se basant sur [GitHashCrash](https://github.com/Mattias-/githashcrash) qui permet de modifier un commit pour que son SHA-1 colisionne avec une valeur donnée, avec un peu de bash et de git-rebase il arrive (contre un peu de CPU) à avoir des commits dont les SHA commencent à 0 et s'incrémentent.</p>
+      <p class="hashtags">#lol #git #cryptography</p>
+      <p class="date">2022-11-22</p>
+    </article>
+    <article>
+      <h3><a href="https://deque.blog/2017/07/06/hexagonal-architecture-a-less-declarative-free-monad/">Hexagonal Architecture and Free Monad: Two related design patterns?</a></h3>
+      <p>Après un rappel sur les avantages de l'archi Hexagonale, comment aller plus loin (en Haskell) avec une Free Monad pour construire un *embedded DSL* avec les propriétés voulues. Il s'agit d'un prélude (2017) aux *effect systems*.</p>
+      <p class="hashtags">#archi-héxagonale #haskell #monade #effect</p>
+      <p class="date">2022-11-26</p>
+    </article>
+    <article>
+      <h3><a href="https://gavincyi.github.io/2022-10-03-does-sam-gross-nogil-cpython-fork-perform-faster/">Does Sam Gross nogil CPython fork perform faster?</a></h3>
+      <p>Une (trop) courte analyse des performances d'un fogk CPython sans GIL.</p>
+      <p class="hashtags">#python #perf #gil</p>
+      <p class="date">2022-12-15</p>
+    </article>
+    <article>
+      <h3><a href="https://dannorth.net/2021/07/26/we-need-to-talk-about-testing/">We need to talk about testing</a></h3>
+      <p>Une vision très pragmatique de ce qu'est le test, et de pourquoi le TDD n'en est pas un très bon exemple.</p>
+      <p class="hashtags">#testing #tdd #bdd</p>
+      <p class="date">2022-12-19</p>
+    </article>
+    <article>
+      <h3><a href="Vexing exceptions">https://ericlippert.com/2008/09/10/vexing-exceptions/</a></h3>
+      <p>Une ontologie des exceptions :<ul><li><strong>fatal</strong> : rien à faire d'autre que crasher en général, par exemple NotEnoughRAM</li><li><strong>boneheaded</strong> ("idiot") : une pré-condition n'a pas été respectée et il y a donc une erreur dans le desing, exemple NullPointerException ou ArrayOutOfBounds</li><li><strong>vexing</strong> : on aurait pu designer pour qu'elle ne puisse pas apparaître, exemple TOCTOU ou parseInt versus tryParseInt (pas en Python !)</li><li><strong>exogenous</strong> : c'est une opération qui notoirement peut échouer et le développeur n'a pas checké, exemple FileNotFound</li></ul></p>
+      <p class="hashtags">#exceptions</p>
+      <p class="date">2022-12-21</p>
+    </article>
+    <article>
+      <h3><a href="Finding JIT Optimizer Bugs using SMT Solvers and Fuzzing">https://www.pypy.org/posts/2022/12/jit-bug-finding-smt-fuzzing.html</a></h3>
+      <p>Un développeur de PyPy explique comment utiliser Z3 (un SMT-solver facile d'accès grâce à ses bindings en Python) pour prouver que des optimizations faites par PyPy sont correctes. Les traces générées par PyPy (puisque c'est une tracing-JIT) peuvent donc être converties en code Z3 et automatiquement prouvées. Il l'a fait pour tous leurs tests unitaires d'abord, puis en branchant en entrée un fuzzer (Hypothesis) qui génère de bonnes traces, certains recoins de l'optimiseur ont pu être explorés et d'autres byg trouvés, principalement concernant les over/underflows et l'asymétrie INT_MAX != abs(INT_MIN). Cela lui a permis de confirmer que deux bugs subtils en étaient bien, maid cela reste pour l'instant limité aux optimisations des opérations numériques.</p>
+      <p class="hashtags">#python #pypy #fuzzing #smt</p>
+      <p class="date">2022-12-21</p>
+    </article>
+    <article>
+      <h3><a href="https://0xda.de/blog/2022/12/a-not-so-unfortunate-sharp-edge-in-pipenv/">A not so unfortunate sharp edge in Pipenv</a></h3>
+      <p>Le récit d'un build cassé et des difficultés à réparer avec l'outillage Pipenv.</p>
+      <p class="hashtags">#python #pipenv #lockfile #dependency #supplychainattack</p>
+      <p class="date">2022-12-22</p>
+    </article>
+    <article>
+      <h3><a href="https://jfrog.com/blog/pypi-malware-creators-are-starting-to-employ-anti-debug-techniques/">PyPI malware creators are starting to employ Anti-Debug techniques</a></h3>
+      <p>Techniques d'obfuscation et d'anti-analyse en Python relevées par JFrog.</p>
+      <p class="hashtags">#python #malware #debug #obfuscation</p>
+      <p class="date">2022-12-25</p>
+    </article>
+    <article>
+      <h3><a href="https://www.idontplaydarts.com/2016/04/detecting-curl-pipe-bash-server-side/">Detecting the use of "curl | bash" server side</a></h3>
+      <p>Comment un serveur peut détecter que ce qu'il envoie est pipé dans bash, qui lit et exécute les lignes une par une.</p>
+      <p class="hashtags">#security #bash #curl</p>
+      <p class="date">2022-12-31</p>
+    </article>
+    <article>
+      <h3><a href="https://hpc.guix.info/blog/2021/09/whats-in-a-package/">What’s in a package</a></h3>
+      <p>Comment packager PyTorch pour Guix (Nix) ? En inspectant le contenu des packages Python et les méthodes pour les construire, on constate que ce n'est ni reproductible, ni même fiable en terme de supply chain. La récente supply chain attack (https://pytorch.org/blog/compromised-nightly-dependency/) dessus le montre bien.</p>
+      <p class="hashtags">#python #package #pip #nix #security #supplychain #reproduciblebuild</p>
+      <p class="date">2023-01-05</p>
+    </article>
+    <article>
+      <h3><a href="https://ahelwer.ca/post/2023-01-11-tree-sitter-tlaplus/">Writing a TLA⁺ tree-sitter grammar</a></h3>
+      <p>Le récit de la (re)définition de la grammaire TLA+ et de son l'implémentation pour tree-sitter afin d'être ensuite intégré dans NeoVim. Avec une bonne explication de la différence entre tree-sitter et un Langage Server. Et des étapes dans le ressenti personnel envers le code OpenSource. J'en suis à 3,5 actuellement.</p>
+      <p class="hashtags">#tlaplus #treesitter #lsp #grammar #opensource</p>
+      <p class="date">2023-01-17</p>
+    </article>
+    <article>
+      <h3><a href="https://tratt.net/laurie/blog/2023/why_we_need_to_know_lr_and_recursive_descent_parsing_techniques.html">Why We Need to Know LR and Recursive Descent Parsing Techniques</a></h3>
+      <p>Une bonne présentation des différences, et donc des avantages et inconvénients, entre les grammaires/parsers LR et descent-recursive. Nécessite de bonnes bases.</p>
+      <p class="hashtags">#parsing</p>
+      <p class="date">2023-01-18</p>
+    </article>
+    <article>
+      <h3><a href="http://nhaehnle.blogspot.com/2023/01/software-testing-and-why-im-unhappy.html">Software testing, and why I'm unhappy about it</a></h3>
+      <p>Effectivement, nos outils actuels d'exécution de suites de test sonr encore rudimentaires.</p>
+      <p class="hashtags">#testing #pragmatism</p>
+      <p class="date">2023-01-20</p>
+    </article>
+    <article>
+      <h3><a href="https://hypothesis.works/articles/calculating-the-mean/">Calculating the mean of a list of numbers</a></h3>
+      <p>Calculer la moyenne d'une séquence de nombres est bien plus compliqué que ça n'en a l'air (en partie à cause des nombres flottants) et le test d'hypothèse peut se révéler utile.</p>
+      <p class="hashtags">#property-based-testing #hypothesis #floats</p>
+      <p class="date">2023-01-23</p>
+    </article>
+    <article>
+      <h3><a href="https://myme.no/posts/2023-01-22-git-commands-you-do-not-need.html">Git Commands You Probably Do Not Need</a></h3>
+      <p>En effet, des commandes avancées qui aident à comprendre Git, et peuvent à l'occasion se révéler utiles.</p>
+      <p class="hashtags">#git #nix</p>
+      <p class="date">2023-01-24</p>
+    </article>
+    <article>
+      <h3><a href="https://tratt.net/laurie/blog/2023/compiled_and_interpreted_languages_two_ways_of_saying_tomato.html">Compiled and Interpreted Languages: Two Ways of Saying Tomato</a></h3>
+      <p>Une démonstration par l'exemple que la frontière est floue entre un interpréteur et un compilateur. L'article en lui-même ne m'a pas vraiment convaincu, mais je suis d'accord. Et le langage "BF" en question c'est "Brainfuck". cf les Projections du Docteur Futamura : http://blog.sigfpe.com/2009/05/three-projections-of-doctor-futamura.html</p>
+      <p class="hashtags">#compilation #brainfuck</p>
+      <p class="date">2023-01-25</p>
+    </article>
+    <article>
+      <h3><a href="https://cucumber.io/blog/bdd/eviscerating-the-test-automation-pyramid/">Eviscerating the Test Automation Pyramid</a></h3>
+      <p>En partant du constat que personne n'est d'accord sur la définition exacte de la Pyramide des Tests, il en propose une que je trouve pertinente : l'axe vertical c'est simplement la portion de l'appli (ou du système) qui est testée. Ça a l'avantage de ne pas trop s'ancrer dans les détails (s'il y a une UI, une API, des classes, ...), et il n'y a pas de labels sur les différents tiers. La présentation de la Pyramide chez Martin Fowler (https://martinfowler.com/articles/practical-test-pyramid.html) est je trouve bonne et adéquatement nuancée.</p>
+      <p class="hashtags">#testing #pyramid</p>
+      <p class="date">2023-01-26</p>
+    </article>
+    <article>
+      <h3><a href="https://lucumr.pocoo.org/2016/12/29/careful-with-str-format/">Be Careful with Python's New-Style String Format</a></h3>
+      <p>Le "new style" c'est str.format car l'article date de 2016. Mais en effet puisqu'on peut exécuter du code arbitraire c'est un risque, que n'ont pas les f-strings je pense.</p>
+      <p class="hashtags">#python #security</p>
+      <p class="date">2023-01-28</p>
+    </article>
+    <article>
+      <h3><a href="https://news.ycombinator.com/item?id=34604923">4 reasons to leave a code comment</a></h3>
+      <p><ul><li>expliquer le besoin métier</li><li>conserver le résultat d'une investigation complexe/laborieuse</li><li>justifier d'un choix</li></ul>(je ne suis pas convaincu par la 4ème)</p>
+      <p class="hashtags">#comment</p>
+      <p class="date">2023-02-03</p>
+    </article>
+    <article>
+      <h3><a href="https://ochagavia.nl/blog/crafting-container-images-without-dockerfiles/">Crafting container images without dockerfile</a></h3>
+      <p>Créer une image Docker sans utiliser un Dockerfile, mais directement en éditant un fichier OCI (en Rust).</p>
+      <p class="hashtags">#docker #rust</p>
+      <p class="date">2023-02-06</p>
+    </article>
+    <article>
+      <h3><a href="One common behavior seen in "mature" software engineers">https://www.luu.io/posts/mature-engineer</a></h3>
+      <p>Laisser les choses en meilleur état.</p>
+      <p class="hashtags">#craft #career</p>
+      <p class="date">2023-02-06</p>
+    </article>
+    <article>
+      <h3><a href="https://herbcaudill.com/words/20190219-rewrite-refactor-reinvent">Rewrite, refactor, or reinvent ? Lessons from 6 software rewrite stories</a></h3>
+      <p>Quels facteurs ont justifié de prendre le risque d'une récriture (malgré l'avertissement de Joel Spolsky) et les différentes stratégies pour réussir.</p>
+      <p class="hashtags">#business #technical-debt</p>
+      <p class="date">2023-02-07</p>
+    </article>
+    <article>
+      <h3><a href="https://cccc.ncte.org/cccc/committees/ip/2009developments/openeducation">An Issue for Open Education: Interpreting the Non-Commercial Clause in Creative Commons Licensing</a></h3>
+      <p>La mise en évidence du flou dans la clause NC ("non-commercial") des licences Creative Commons. TL;DR : il n'y a pas de jurisprudence, donc se méfier.</p>
+      <p class="hashtags">#creative-commons #licence</p>
+      <p class="date">2023-02-08</p>
+    </article>
+    <article>
+      <h3><a href="https://jvns.ca/blog/2023/02/08/why-does-0-1-plus-0-2-equal-0-30000000000000004/">Why does 0.1 + 0.2 = 0.30000000000000004?</a></h3>
+      <p>Très bonne explication des problèmes de précision/représentation causés par les floats.</p>
+      <p class="hashtags">#float</p>
+      <p class="date">2023-02-09</p>
+    </article>
+    <article>
+      <h3><a href="https://ahelwer.ca/post/2023-02-07-cpp-bugs-sanitized/">Can sanitizers find the two bugs I wrote in C++?</a></h3>
+      <p>TL;DR: oui, cf ma revue le 2023-01-17, les réponses en commentaires à son article lui disaient que les sanitisers auraient trouvé les 2 bugs qu'il a rencontré.</p>
+      <p class="hashtags">#cpp #asan #ubsan</p>
+      <p class="date">2023-02-09</p>
+    </article>
+    <article>
+      <h3><a href="https://wiki.alopex.li/LetsBeRealAboutDependencies">Let's ne real bout dependencies</a></h3>
+      <p>En réponse aux critiques comme quoi les programmes Rust utilisent trop de dépendences transitives, il montre que c'est aussi le cas pour les programmes "clean" en C/C++ mais qu'ils le font de manière (beaucoup) moins évidente. Ses conclusions à la fin sont bonnes.</p>
+      <p class="hashtags">#dependencies #os #c #cpp #rust</p>
+      <p class="date">2023-02-11</p>
+    </article>
+    <article>
+      <h3><a href="https://jeremykun.com/2023/02/13/googles-fully-homomorphic-encryption-compiler-a-primer/">Google’s Fully Homomorphic Encryption Compiler — A Primer</a></h3>
+      <p>Une petite démo de la transpilation d'un programme simpliste en C++ (syntaxe réduite) vers du code qui réalise les opérations sous chiffrage homomorphique, c'est-à-dire sans avoir à déchiffrer les données. Par contre les perfs sont abyssales (pénalité de 20000).</p>
+      <p class="hashtags">#encryption</p>
+      <p class="date">2023-02-14</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/5eW6Eagr9XA">The 4 things it takes to be an expert</a></h3>
+      <p>TL;DR: l'expertise c'est savoir reconnaître des patterns, il faut réunir 4 critères :<ul><li>s'entraîner inlassablement</li><li>sur des tâches qui dépendent de nous (pas aléatoire)</li><li>pour obtenir du feedback sur nos décisions</li><li>et le faire à la limite de nos possibilités pour les repousser</li></ul>Pour moi, ça ressemble beaucoup à l'esprit Craftmanship : maîtriser ses outils et techniques via les kata, mentorer.</p>
+      <p class="hashtags">#expert #craft</p>
+      <p class="date">2023-02-15</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/-J3wNP6u5YU">Naming things in code</a></h3>
+      <p>TL;DR : dans les noms de variables : pas d'abbréviation, pas d'info de type (hungarian notation), pas d'unité, pas de type (I pour Interface, pas de *abstract* ou *base*.</p>
+      <p class="hashtags">#naming</p>
+      <p class="date">2023-02-15</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/8Ab3ArE8W3s">"Stop writing dead programs" by Jack Rusher (Strange Loop 2002)</a></h3>
+      <p>Dans la lignée du "Stop drawing dead fishes" de Bret Victor, ce talk présente les limitations de la manière classique de travailler avec les langages mainstream, et des alternatives (ou pistes de réflexion) pour augmenter l'interactivité.</p>
+      <p class="hashtags">#future</p>
+      <p class="date">2023-02-15</p>
     </article>
       <!--
     <article>
