@@ -10,7 +10,6 @@
     <p>TODO: flux RSS</p>
     <p>TODO: tags</p>
     <p>TODO: permalinks</p>
-    <p>TODO: no-js compatible ?</p>
     <p>TODO: tailwind CSS ?</p>
     <p>Les eaux du web sont si étendues qu'on ne peut les explorer complètement, mais elles regorgent de merveilles. En voici quelques-unes que j'ai pu rencontrer.</p>
     <article>
@@ -147,7 +146,7 @@
     </article>
     <article>
       <h3><a href="https://youtu.be/0nbkaYsR94c">You suck at Excel with Joel Spolsky</a></h3>
-      <p>Joel Spolsky, en outre fondateur de Stack Overflow et auteur de l'influentiel [blog "Joel on Software"](https://www.joelonsoftware.com/), a également été développeur à Microsoft sur Excel, il présente (dans un ton un peu dédaigneux) les fonctionnalités essentielles que pas assez de mondes connaît, en particulier la supériorité des "Tables".</p>
+      <p>Joel Spolsky, en outre fondateur de Stack Overflow et auteur de l'influentiel <a href="https://www.joelonsoftware.com/">blog "Joel on Software"</a>, a également été développeur à Microsoft sur Excel, il présente (dans un ton un peu dédaigneux) les fonctionnalités essentielles que pas assez de mondes connaît, en particulier la supériorité des "Tables".</p>
       <p class="hashtags">#youtube #excel #tuto</p>
       <p class="date">2022-09-28</p>
     </article>
@@ -213,7 +212,7 @@
     </article>
     <article>
       <h3><a href="https://westling.dev/b/extremely-linear-git">Extremely Linear Git History</a></h3>
-      <p>En se basant sur [GitHashCrash](https://github.com/Mattias-/githashcrash) qui permet de modifier un commit pour que son SHA-1 colisionne avec une valeur donnée, avec un peu de bash et de git-rebase il arrive (contre un peu de CPU) à avoir des commits dont les SHA commencent à 0 et s'incrémentent.</p>
+      <p>En se basant sur <a href="https://github.com/Mattias-/githashcrash">GitHashCrash</a> qui permet de modifier un commit pour que son SHA-1 colisionne avec une valeur donnée, avec un peu de bash et de git-rebase il arrive (contre un peu de CPU) à avoir des commits dont les SHA commencent à 0 et s'incrémentent.</p>
       <p class="hashtags">#lol #git #cryptography</p>
       <p class="date">2022-11-22</p>
     </article>
@@ -362,7 +361,7 @@
       <p class="date">2023-02-09</p>
     </article>
     <article>
-      <h3><a href="https://wiki.alopex.li/LetsBeRealAboutDependencies">Let's ne real bout dependencies</a></h3>
+      <h3><a href="https://wiki.alopex.li/LetsBeRealAboutDependencies">Let's be real about dependencies</a></h3>
       <p>En réponse aux critiques comme quoi les programmes Rust utilisent trop de dépendences transitives, il montre que c'est aussi le cas pour les programmes "clean" en C/C++ mais qu'ils le font de manière (beaucoup) moins évidente. Ses conclusions à la fin sont bonnes.</p>
       <p class="hashtags">#dependencies #os #c #cpp #rust</p>
       <p class="date">2023-02-11</p>
@@ -390,6 +389,168 @@
       <p>Dans la lignée du "Stop drawing dead fishes" de Bret Victor, ce talk présente les limitations de la manière classique de travailler avec les langages mainstream, et des alternatives (ou pistes de réflexion) pour augmenter l'interactivité.</p>
       <p class="hashtags">#future</p>
       <p class="date">2023-02-15</p>
+    </article>
+    <article>
+      <h3><a href="https://dorinlazar.ro/220710-trying-to-modernize-goaccess.en/">Lessons learnt while trying to modernize some C code</a></h3>
+      <p>L'échec de tenter de contribuer à un projet open-source ... en langage C sale.</p>
+      <p class="hashtags">#c #cpp #codequality</p>
+      <p class="date">2023-02-20</p>
+    </article>
+    <article>
+      <h3><a href="https://blog.yossarian.net/2021/02/28/Weird-architectures-werent-supported-to-begin-with">Weird architectures weren't supported to begin with</a></h3>
+      <p>La décision des dévellopeurs de l'éminent package Python `cryptography` de passer de C à Rust en 2021, pour des raisons de fiabilité, a cassé beaucoup de pipelines (car Rust n'était pas présent pour compiler le package depuis ses sources si pip ne trouvait pas de wheel pré-compilée adéquate) et ne peut donc qu'être installé sur des plateformes supportées par le backend de LLVM. Ça a été l'occasion de relancer le débat sur la responsabilité (ou pas) des mainteneurs OpenSource.</p>
+      <p class="hashtags">#python #rust #cryptography</p>
+      <p class="date">2023-02-21</p>
+    </article>
+    <article>
+      <h3><a href="https://bits.houmus.org/2020-01-28/this-goes-to-eleven-pt1">This Goes to Eleven (Part 1/∞)</a></h3>
+      <p>"I ended up going down the rabbit hole re-implementing array sorting with AVX2 intrinsics. There’s no reason I should go down alone." est le premier opus d'une série d'articles qui suivent de façon très introductive l'implémentation d'un QuickSort à base d'instructions vectorielles (AVX), pour DotNet. Il y a des infographies complètes, des data sourcées, des animations, ... un vrai soin apporté !</p>
+      <p class="hashtags">#avx #dotnet #optimisation #algo</p>
+      <p class="date">2023-02-21</p>
+    </article>
+    <article>
+      <h3><a href="https://www.hillelwayne.com/post/np-hard/#fnref:phase-barrier">NP-Complete isn't (always) Hard</a></h3>
+      <p>Un petit rappel que les classes de complexité se basent sur le *worst case*, qui peut ne pas être représentatif (contraposée : des problèmes communs sont facilement SAT-solvés bien que NP-Complete/Hard). Et les *package managers* n'utilisent  pas de SAT-solvers (en général) car c'est peu approprié/pratique.</p>
+      <p class="hashtags">#algo #complexity #dependency #sat</p>
+      <p class="date">2023-02-21</p>
+    </article>
+    <article>
+      <h3><a href="https://jchyip.medium.com/the-age-of-cargo-cult-agile-must-end-9408e1d13e1d">The age of cargo cult Agile must end.</a></h3>
+      <p>Débunkage d'un article critique de l'Agile. Il y a de très nombreuses sources, la perspective historique que cela donne est très appréciable. Et cela ré-affigme ce qu'est l'Agile et ses méthodologies. Je vois souvent les gens confondre Agile et Scrum, voire faux-Scrum.</p>
+      <p class="hashtags">#agile</p>
+      <p class="date">2023-02-23</p>
+    </article>
+    <article>
+      <h3><a href="https://cert.pl/en/posts/2023/02/breaking-phobos/">A tale of Phobos - how we almost cracked a ransomware using CUDA</a></h3>
+      <p>Pour tenter de casser les clés de chiffrement d'un ransomware, les chercheurs ont réduit l'espace de recherche (entropie) puis optimisé le code, pour atteindre une durée de crack raisonnable. Mais tout cela requière des infos très précises sur le contexte d'exécution du ransomware.</p>
+      <p class="hashtags">#cryptography #reverse-engineering #cuda</p>
+      <p class="date">2023-02-24</p>
+    </article>
+    <article>
+      <h3><a href="https://felipec.wordpress.com/2023/02/24/gnomes-horrid-coding-practices/">GNOME’s horrid coding practices</a></h3>
+      <p>L'autfur explique qu'avoir raison est plus important qu'être poli, de ça je ne suis pas convaincu. Par contre refuser une contribution et s'enfermer dans un marasme de hotfixes me semble clairement inefficace. Un bug est un bug.</p>
+      <p class="hashtags">#opensource #communication</p>
+      <p class="date">2023-02-26</p>
+    </article>
+    <article>
+      <h3><a href="https://www.halfarsedagilemanifesto.org/">Manifesto for Half-Arsed Agile Software Development</a></h3>
+      <p>La version semi-parodique "foireuse" du [Manifeste Agile](https://agilemanifesto.org/iso/fr/manifesto.html)</p>
+      <p class="hashtags">#lol #agile</p>
+      <p class="date">2023-03-01</p>
+    </article>
+    <article>
+      <h3><a href="http://motherfuckingwebsite.com/">This is a motherfucking website.</a></h3>
+      <p>Un exemple de site web pas trop moche avec quasi aucun CSS. A inspiré http://bettermotherfuckingwebsite.com/ et https://thebestmotherfucking.website/</p>
+      <p class="hashtags">#lol #design #css</p>
+      <p class="date">2023-03-02</p>
+    </article>
+    <article>
+      <h3><a href="https://commoncog.com/goodharts-law-not-useful/">Goodhart's Law Isn't as Useful as You Might Think</a></h3>
+      <p>Une présentation de la Weekly Business Review d'Amazon, qui passe en revue des centaines de métriques actionnables pour améliorer les résultats de l'entreprise.</p>
+      <p class="hashtags">#process #data-driven</p>
+      <p class="date">2023-03-04</p>
+    </article>
+    <article>
+      <h3><a href="https://blog.robertelder.org/importance-of-ecc-memory/">Imaging A Hard Drive With non-ECC Memory - What Could Go Wrong?</a></h3>
+      <p>La recherche de la cause d'une erreur de checksum.</p>
+      <p class="hashtags">#debugging #ram #ecc</p>
+      <p class="date">2023-03-06</p>
+    </article>
+    <article>
+      <h3><a href="https://without.boats/blog/the-registers-of-rust/">The Registers of Rust</a></h3>
+      <p>Présentation du concept de "registre de language" par analogie à nos langues où l'on peut user de différents registres (formel, familier, ...) qui permettent différemment de communiquer. Dans le cas de Rust ici il est discuté des manques de certains, surtout en regard des *effects* et de la programmation fonctionnelle versus impérative.</p>
+      <p class="hashtags">#rust #language-theory #functional #effects</p>
+      <p class="date">2023-03-09</p>
+    </article>
+    <article>
+      <h3><a href="https://cuberule.com/">The Cube Rule of Food Identification</a></h3>
+      <p>La fin des débats de ce qui est ou pas un sandwich ? (non)</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-03-09</p>
+    </article>
+    <article>
+      <h3><a href="https://m.youtube.com/watch?v=F42A3R28WMU">How we can correct the mistakes made with Agile • Allen Holub</a></h3>
+      <p>Allen Holub dans cette vidéo défend une vision très pure de l'Agile : autonomie complètes des équipes, livraison permanente qui donne lieu à du feedback immédiatement, ... Et en effet c'est assez différent de Scrum.<br/>Il dézingue Scrum en expliquant que ça ne peut pas marcher (son analogie sur l'usine de Detroit), mais je crois plutôt que, contrairement à ce qui est écrit dans le Scrum Guide, il ne faut pas le prendre comme une bible mais comme une base pas trop mauvaise. Je défends ensuite de l'adapter aux envies/besoins/particularités de l'équipe.<br/>[Insérer référence à "les règles au début on les suit sans les comprendre, puis on les comprend, puis on crée ses propres règles]<br/>Se contenter de Scrum c'est effectivement se mettre une poutre dans l'oeil. Mais ça fait fonctionner le biz du "Agile industrial complex" (disclaimer : ma certif dèv Scrum a expiré il y a 3 ans).<br/>Mais pour aller au-delà il faut déplacer des montagnes : sortir du taylorisme, obtenir la confiance et l'autonomie, être auto-critique et savoir s'auto-organiser, ... Je ne crois pas que tout ça soit acquis, donc on se retrouve souvent avec Scrum comme compromis.<br/>Et je voudrais insister sur le fait que Scrum évolue beaucoup. Je ne connais pas la version d'il y a 20 ans, mais la version 2022 est significativement différente de celle de ma certif de 2018. La certif c'était de savoir répondre par coeur à des questions, donc effectivement le niveau zéro de l'esprit critique. Et c'est dans ce terreau que naissent les guéguerres de chapelles. Le cargo culting ne sert personne, à part les vendeurs de hype.<br/>Pour moi, Scrum c'est pas un si mauvais premier choix comparé à bien d'autres situations car tu as l'obligation de livrer (et donc d'intégrer), de se centrer sur la valeur, de s'améliorer continuellement, ... Toutes des valeurs du Manifeste, peut-être pas dans la pureté que défend Allen, mais je pense qu'il vaut mieux "half of scrum badly + jira" (citation d'Andy Hunt) que rien du tout. Et ensuite évoluer vers mieux.<br/>Pour conclure, et par rapport au titre de la vidéo, ne pas perdre de vue le contenu du Manifeste, et ne pas se contenter de Scrum (et surtout pas de Jira !).<br/>PS : se baser sur les slogans Orwelliens c'était un peu pété à mon avis</p>
+      <p class="hashtags">#agile #scrum</p>
+      <p class="date">2023-03-13</p>
+    </article>
+    <article>
+      <h3><a href="https://programmingisterrible.com/post/176657481103/repeat-yourself-do-more-than-one-thing-and">Repeat yourself, do more than one thing, and rewrite everything</a></h3>
+      <p>Cet article a l'air intéressant, mais qu'est-ce qu'il part dans tous les sens, je ne vois pas le fil conducteur ! Dès le début ça embraye sur DRY, puis ça tourne sur <a href="https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction">Sandi Metz à propos de "<i>the wrong abstraction</i>"</a>, que ça compare au SRP de Solid, que ça enchaîne sur les difficultés de couplage puis sur la modularisation. Et ça semble ne pas prendre le temps de rappeler que l'origine de DRY c'est <i>The Pragmatic Programmer</i> et que ses auteurs dans 20e édition précisent que DRY ce n'est pas tant à propos du copier-coller que surtout "<i>the duplication of knowledge, of intent</i>". Mais ce n'est pas comme ça que ça a été compris. WET tente de contrecarrer les effets néfastes de DRY sur l'abstraction, mais il n'est pas mentionné dans l'article.</p>
+      <p class="hashtags">#dry #craft</p>
+      <p class="date">2023-03-16</p>
+    </article>
+    <article>
+      <h3><a href="https://www.archunit.org/use-cases">Unit test your Java architecture</a></h3>
+      <p>Un framework pour implémenter en Java des tests sur des règles d'architecture (import de package interdit, respect des couches, pas de cycles, ...).</p>
+      <p class="hashtags">#archi #java #test</p>
+      <p class="date">2023-03-20</p>
+    </article>
+    <article>
+      <h3><a href="https://wordsandbuttons.online/outperforming_everything_with_anything.html">Outperforming everything with anything</a></h3>
+      <p>L'exemple porte sur l'optimisation d'une fonction de calcul sur une matrice, dont le temps d'exécution est benchmarké. Une solution naïve est codée en Python, et lorsqu'elle est exécutée la première fois elle note astucieusement le code LLVM correspondant à ce qu'elle fait. Le code ainsi produit est très verbeux et très peu optimisé, mais une phase de compilation avec optimisation plus tard on obtient un super binaire, qui obtient de bons résultats au benchmark. C'est une technique utilisée par des compilateurs Python pour la perf, comme Numba.</p>
+      <p class="hashtags">#python #perf #compilation #llvm</p>
+      <p class="date">2023-03-21</p>
+    </article>
+    <article>
+      <h3><a href="https://www.stilldrinking.org/programming-sucks">Programming Sucks</a></h3>
+      <p>Un bon râlage sur le bazar qu'est la programmation. Dispo en <a href="https://alexisbrenon.github.io/blog/technique/2015/04/21/Programming_sucks.html">français</a></p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2021-03-21</p>
+    </article>
+    <article>
+      <h3><a href="https://outerproduct.net/boring/2023-03-22_cpu-compiler-gc-ohmy.html">A CPU is a compiler</a></h3>
+      <p>Un CPU est un compilateur qui prend en entrée de l'ASM et en sortie produit des phénomènes physico-électriques. Vu sous cette angle, on retrouve beaucoup de techniques en commun.</p>
+      <p class="hashtags">#compiler #cpu</p>
+      <p class="date">2023-03-24</p>
+    </article>
+    <article>
+      <h3><a href="https://apenwarr.ca/log/20201227">Systems design explains the world: volume 1</a></h3>
+      <p>Une courte introduction à l'utilité et quelques exemples de <i>systems design<i>. J'aime beaucoup l'approche de tenter de comprendre la réalité et d'aller à la source des problèmes.</p>
+      <p class="hashtags">#systems-design</p>
+      <p class="date">2023-03-25</p>
+    </article>
+    <article>
+      <h3><a href="https://komoroske.com/slime-mold/">Coordination Headwind</a></h3>
+      <p>Comment une organisation qui travaillait rapidement devient lente en grandissant ? En devant aligner les intérêts de nombreuses personnes, au même moment, avec un plan clair pour un objectif identifié, de façon satisfante pour chacune, en évitant les tensions inter-personnelles, et les escalades par managers intermédiaires.</p>
+      <p class="hashtags">#organisation</p>
+      <p class="date">2023-03-27</p>
+    </article>
+    <article>
+      <h3><a href="https://www.oliverburkeman.com/river">Treat your to-read pile like a river, not a bucket</a></h3>
+      <p>Du haut de mes 300+ onglets sur téléphone (Firefox m'indique "∞"), mon dossier "later" de 200+ bookmarks, mon "later2" de 1000+, mes archives des différents ordinateurs/navigateurs que j'ai eu ... oui j'ai le même problème. Pour s'en sortir il faut choisir quoi sacrifier &semi; c'est dur. Et ne pas ré-ouvrir Hacker News juste après ...</p>
+      <p class="hashtags">#veille</p>
+      <p class="date">2023-03-30</p>
+    </article>
+    <article>
+      <h3><a href="https://ohadravid.github.io/posts/2023-03-rusty-python/">Making Python 100x faster with less than 100 lines of Rust</a></h3>
+      <p>Un algorithme intensif en calcul récrit efficacement en Rust. L'outillage de base (pyo3/maturin) permet de facilement étendre du code Python par du Rust, avec un peu de connaissances en Rust (et un scope réduit) on peut tout-à-fait en intégrer au besoin. Néanmoins, utiliser la vectorisation intrinsèque à Python aurait pu améliorer significativement les perfs sans se compliquer la vie à devoir ajouter du Rust.</p>
+      <p class="hashtags">#python #rust #performance</p>
+      <p class="date">2023-04-03</p>
+    </article>
+    <article>
+      <h3><a href="https://johnnysswlab.com/decreasing-the-number-of-memory-accesses-the-compilers-secret-life-2-2/">Decreasing the Number of Memory Accesses: The Compiler’s Secret Life 2/2</a></h3>
+      <p>Des techniques d'opti que je ne connaissais pas (contrairement à la partie 1).</p>
+      <p class="hashtags">#perf #opti #compilo #cpp</p>
+      <p class="date">2023-04-04</p>
+    </article>
+    <article>
+      <h3><a href="https://taylor.town/-10x">How to be a -10x Engineer</a></h3>
+      <p>Le nemesis. Effrayant de retrouver certaines pratiques courantes dans cette liste.</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-04-04</p>
+    </article>
+    <article>
+      <h3><a href="https://link.springer.com/article/10.1007/s10664-016-9464-2">Recurring opinions or productive improvements — what agile teams actually discuss in retrospectives</a></h3>
+      <p>Mes remarques dessus, à part que c'est globalement intéressant :<ul><li>* Les ScrumMaster ont l'air de faire du bon boulot (car leur poste est distinct de manager/chef de projet ?), mais je remarque l'absence de scrum master comme sujet de discussion</li><li>* Les tableaux (figures) sont synthétiquement intéressants pour savoir de quoi discutent les autres, j'aime beaucoup cet aspect du "pratical engineering" (le nom du journal de publication/du domaine de recherche). Mais le n°8 est illisible pour moi (ou je suis daltonien ?)</li><li>* La figure 10 en particulier montre bien qie l'équipe est très sensibles aux bugs (leur augmentation comme diminution) tant que la variance est forte, on peut appeller ça du "flair" non ?</li><li>* On voit bien une évolution des sujets dans la vie du projet</li><li>* Dans la conclusion ils parlent de sujets "bouc-émissaires", mais je serais moins négatif. J'entrevois mal qu'on essaye d'appliquer une rigueur scientifique aux rétros, qui sont pour moi l'occasion de donner un peu de place à l'humain dans les process. Certes ça ne fait pas avancer le schmilblik, mais ça fait du bien de pester un peu ! #Français</li></ul></p>
+      <p class="hashtags">#agile</p>
+      <p class="date">2023-04-05</p>
+    </article>
+    <article>
+      <h3><a href="https://refactoring.guru/fr/design-patterns/decorator">Le design pattern : décorateur</a></h3>
+      <p><p>En lisant l'article, j'ai été surpris de trouver les exemples aussi mauvais. En premier par le cas de notifieurs, ce n'est pas cette solution que je recommanderait, et ce pour 2 raisons :<ul><li>* D'abord ce n'est pas très DDD, c'est-à-dire que ce n'est pas une modélisation du métier tel qu'il existe, ce concept de "wrapper" vient uniquement du code, il n'existe pas dans le problème décrit. Ce qu'on a plutôt, et ils le disent, c'est plusieurs moyens de contact et on veut tous les utiliser. Est-ce qu'une bête liste ne ferait pas aussi bien le travail ? Le client met dedans tous les moyens de contact qu'il veut, et l'appli les effectue un par un.</li><li>* Et d'un point de vue complexité, pas besoin de classes abstraites, de wrapper, de récursivité (comme semble l'indiquer leur snippet `stack = new FacebookDecorator(stack)`). Pour l'instant, tout cela n'est absolument pas justifié. Et pourtant si on plisse les yeux on voit bien qu'on émule un vecteur avec tout ça (succession d'ajouts conditionnels `if (facebookEnabled) push_back`).</li></ul><p>Ensuite leur analogie des vêtements en couche est claquée. Sans moi-même fallacieusement faire remarquer que le même problème peut être vu comme une question d'archi en couche (je l'ai fais dans la phrase précédente), c'est surtout que s'il pleut et qu'ensuite j'ai froid alors je mets mon blouson par-dessus mon anorak ? Le métier (propriétés techniques des habits, et les coutumes vestimentaires) ne prescrit rien, mais on fait quand même un choix technique pété.</p><p>Ensuite l'article part sur les décorateurs abstraits. Je soutiens qu'ils ne servent à rien pour le pattern. Surtout qu'ils rigidifient de devoir appeller un unique `extra` sans paramètre, et après l'emballé. Ce qu'il faudra de toute façon override, donc autant s'en passer.</p><p>J'ai l'impression que l'article ne démontre pas du tout correctement l'utilité des décorateurs. Pourtant ils sont très utiles, en Python il y a de la syntaxe exprès pour. Mais là ils ne donnent pas d'arguments décisifs et s'encombrent trop je trouve.</p></p>
+      <p class="hashtags">#design-pattern</p>
+      <p class="date">2023-04-p6</p>
     </article>
       <!--
     <article>
