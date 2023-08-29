@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Lenormand Julien</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="simple-v1.min.css">
   </head>
   <body>
     <h1>Veille</h1>
@@ -524,7 +525,7 @@
     </article>
     <article>
       <h3><a href="https://ohadravid.github.io/posts/2023-03-rusty-python/">Making Python 100x faster with less than 100 lines of Rust</a></h3>
-      <p>Un algorithme intensif en calcul récrit efficacement en Rust. L'outillage de base (pyo3/maturin) permet de facilement étendre du code Python par du Rust, avec un peu de connaissances en Rust (et un scope réduit) on peut tout-à-fait en intégrer au besoin. Néanmoins, utiliser la vectorisation intrinsèque à Python aurait pu améliorer significativement les perfs sans se compliquer la vie à devoir ajouter du Rust.</p>
+      <p>Un algorithme intensif en calcul récrit efficacement en Rust. L'outillage de base (pyo3/maturin) permet de facilement étendre du code Python par du Rust, avec un peu de connaissances en Rust (et un scope réduit) on peut tout-à-fait en intégrer au besoin. Néanmoins, utiliser la vectorisation intrinsèque à Numpy aurait pu améliorer significativement les perfs sans se compliquer la vie à devoir ajouter du Rust.</p>
       <p class="hashtags">#python #rust #performance</p>
       <p class="date">2023-04-03</p>
     </article>
@@ -550,7 +551,277 @@
       <h3><a href="https://refactoring.guru/fr/design-patterns/decorator">Le design pattern : décorateur</a></h3>
       <p><p>En lisant l'article, j'ai été surpris de trouver les exemples aussi mauvais. En premier par le cas de notifieurs, ce n'est pas cette solution que je recommanderait, et ce pour 2 raisons :<ul><li>* D'abord ce n'est pas très DDD, c'est-à-dire que ce n'est pas une modélisation du métier tel qu'il existe, ce concept de "wrapper" vient uniquement du code, il n'existe pas dans le problème décrit. Ce qu'on a plutôt, et ils le disent, c'est plusieurs moyens de contact et on veut tous les utiliser. Est-ce qu'une bête liste ne ferait pas aussi bien le travail ? Le client met dedans tous les moyens de contact qu'il veut, et l'appli les effectue un par un.</li><li>* Et d'un point de vue complexité, pas besoin de classes abstraites, de wrapper, de récursivité (comme semble l'indiquer leur snippet `stack = new FacebookDecorator(stack)`). Pour l'instant, tout cela n'est absolument pas justifié. Et pourtant si on plisse les yeux on voit bien qu'on émule un vecteur avec tout ça (succession d'ajouts conditionnels `if (facebookEnabled) push_back`).</li></ul><p>Ensuite leur analogie des vêtements en couche est claquée. Sans moi-même fallacieusement faire remarquer que le même problème peut être vu comme une question d'archi en couche (je l'ai fais dans la phrase précédente), c'est surtout que s'il pleut et qu'ensuite j'ai froid alors je mets mon blouson par-dessus mon anorak ? Le métier (propriétés techniques des habits, et les coutumes vestimentaires) ne prescrit rien, mais on fait quand même un choix technique pété.</p><p>Ensuite l'article part sur les décorateurs abstraits. Je soutiens qu'ils ne servent à rien pour le pattern. Surtout qu'ils rigidifient de devoir appeller un unique `extra` sans paramètre, et après l'emballé. Ce qu'il faudra de toute façon override, donc autant s'en passer.</p><p>J'ai l'impression que l'article ne démontre pas du tout correctement l'utilité des décorateurs. Pourtant ils sont très utiles, en Python il y a de la syntaxe exprès pour. Mais là ils ne donnent pas d'arguments décisifs et s'encombrent trop je trouve.</p></p>
       <p class="hashtags">#design-pattern</p>
-      <p class="date">2023-04-p6</p>
+      <p class="date">2023-04-06</p>
+    </article>
+    <article>
+      <h3><a href="https://aurelievache.gumroad.com/l/understanding-docker-visual-way">Ma revue de "Understanding Docker in a visual way" par Aurélie Vache</a></h3>
+      <p>Un bon *primer* je trouve, on a de bonnes bases pour commencer. Mais ça reste très "catalogue de comment faire certaines actions", je trouve qu'il y a assez peu de "understanding" au final. Pour reprendre la classification Divio https://documentation.divio.com/ on a bien les 3 autres quadrants mais il manque je trouve de la substance entre toutes les commandes qu'elle énumère. La forme a peut-être un peu trop guidé le fond.<br/>Et je trouvais parfois l'écriture manuscrite presque illisible, je préfère le compromis d'Excalidraw plus efficace.<br/>Elle mentionne qu'il ne faut pas passer des secrets avec --build-arg mais ne pointe pas vers la façon correcte de faire.<br/>Ça n'empêche pas que j'ai appris des trucs, soit que je n'avais pas creusé (les limites RAM/swap, CPU, capabilities, ...) soit qui m'était mystérieux (la convention chroot pour les exit code).</p>
+      <p class="hashtags">#docker</p>
+      <p class="date">2023-01-12</p>
+    </article>
+    <article>
+      <h3><a href="https://aurelievache.gumroad.com/l/understanding-istio-visual-way">Ma revue de "Understanding Istio in a visual way" par Aurélie Vache</a></h3>
+      <p>Aucune explication de ce qu'est un Service Mesh, dès le début. L'avant-propos indique de ne pas troller en comparant les alternatives, mais ni leurs différences ni même leurs noms ne sont évoqués. Et la description de ce que fait Istio se résume à "cette liste de checkpoints [non définis]" (page 9). Le texte manuscrit est devenu majoritaire, au détriment de la lisibilité. Et il y a encore de nombreuses fautes de grammaire. Et j'ai du mal à lire les niveaux d'indentation des Yaml.<br/>Page 27 surgissent les VirtualService sans aucun contexte, ils sont juste cité dans un schéma plusieurs pages avant sur les Gateway, accompagné du mot "bind".<br/>Pour moi, le "in a visual way" prend encore une fois le pas sur le "understanding", mais plus encore que pour son oeuvre similaire sur Docker, tant est que j'ai du mal à suivre le contenu.<br/>Nitpick : elle donne l'exemple de router le trafic HTTP selon l'user-agent "firefox" mais il faut plutôt chercher "gecko", le nom du moteur de rendu qui est présent dans d'autres applicatifs, cf https://webaim.org/blog/user-agent-string-history/</p>
+      <p class="hashtags">#kubernetes</p>
+      <p class="date">2023-01-12</p>
+    </article>
+    <article>
+      <h3><a href="https://samwho.dev/load-balancing/">Load Balancing</a></h3>
+      <p>Explication très intuitive grâce aux visuels.</p>
+      <p class="hashtags">#perf</p>
+      <p class="date">2023-04-29</p>
+    </article>
+    <article>
+      <h3><a href="https://increment.com/teams/the-epistemology-of-software-quality/">The epistemology of software quality</a></h3>
+      <p>Qu'est qui est plus efficace qu'un linter ou que Rust pour la qualité de code ? Que les devs soient reposés, ne travaillent pas trop et ne soient pas (trop) stressés.</p>
+      <p class="hashtags">#quality</p>
+      <p class="date">2023-04-29</p>
+    </article>
+    <article>
+      <h3><a href="https://www.computerenhance.com/p/performance-excuses-debunked">Performance Excuses Debunked</a></h3>
+      <p>5 justifications fréquentes que la perf ne compte *jamais*, réfut3es par Casey Muratori. Ca fait un peu argument de l'homme de paille, mais les très nombreux exemples qu'il donne sont bien une preuve que c'est un sujet fréquemment pertinent (même si pas toujours).</p>
+      <p class="hashtags">#perf #proof</p>
+      <p class="date">2023-04-29</p>
+    </article>
+    <article>
+      <h3><a href="https://www.mayer.cool/writings/Heisting-20-Million-in-Magic-Cards/">Heisting 20 Million Dollars' Worth of Magic: The Gathering Cards in a Single Request</a></h3>
+      <p>Décompiler le jeu (en C# car Unity), trouver comment provoquer un int overflow, et profit.</p>
+      <p class="hashtags">#mtg #secu #csharp</p>
+      <p class="date">2023-05-05</p>
+    </article>
+    <article>
+      <h3><a href="https://wasmlabs.dev/articles/wasm-host-to-python/">Extending web applications with WebAssembly and Python</a></h3>
+      <p>Suborbital sert d'exemple. C'est un moteur/framework pour permettre les plugins dans des webapps. Il y a notament une interface WASM qu'il est possible de target. En réutilisant les travaux antérieurs sur embarquer un interpréteur Python (compilé en WASM) dans le navigateur, il devient facile de créer un plugin web en pur Python. L'article est clair, le code est dispo et expliqué, cool ! Mais ils ne parlent pas de perf du tout.</p>
+      <p class="hashtags">#python #wasm</p>
+      <p class="date">2023-05-11</p>
+    </article>
+    <article>
+      <h3><a href="https://kobzol.github.io/rust/python/2023/05/20/writing-python-like-its-rust.html">Writing Python like it's Rust</a></h3>
+      <p>Uniquement des techniques basées sur le typage, mais néanmoins pertinentes.</p>
+      <p class="hashtags">#python #typing</p>
+      <p class="date">2023-05-24</p>
+    </article>
+    <article>
+      <h3><a href="https://xorvoid.com/sectorc.html">SectorC: A C Compiler in 512 bytes</a></h3>
+      <p>Un compilateur qui pour tenir dans le boot sector (0,5 Ko) est minimal. Ca n'est bien entendu pas conforme au dtandard, mais ça montre ce qu'on peut réussir à faire avec de l'ASM.</p>
+      <p class="hashtags">#c #compiler #lol</p>
+      <p class="date">2023-05-25</p>
+    </article>
+    <article>
+      <h3><a href="https://neon.tech/blog/when-limit-9-works-but-limit-10-hangs">When LIMIT 9 works but LIMIT 10 hangs</a></h3>
+      <p>TL;DR: certaines requêtes SQL faisaient péter le WebSockets de la lib "undici" entre une app Node et la DB Postgres, car le payload WS dépassait la taille threshold de 126, ce qui provoquait dans la lib un bug de mémoire (non initialisée et non écrite) pour de sombres histoires d'offset dans un ArrayBuffer dans une pool et de perf.</p>
+      <p class="hashtags">#ws #perf #postgres</p>
+      <p class="date">2023-05-31</p>
+    </article>
+    <article>
+      <h3><a href="https://news.ycombinator.com/item?id=36128617">Hacking my “smart” toothbrush</a></h3>
+      <p>L'article parle d'une brosse à dent dont le manche communique avec la tête via NFC. Et les commentaires sur Hacker News vont bon train sur les implications stupides que cela permet : après 3 mauvais mots de passe, la tête se brick (valeur très basse définie par Philips par sécurité), donc avec le bon matos tu peux aller te balader dans un magasin et bousiller tout leur stock (Toothbrush Terrorist). Ou bien ajouter la 2FA comme mesure de sécurité additionnelle, reconvertir la tête NFC en clé d'hotel ou carte d'abonnement de transport en commun, requérir que le remplacement des parties satisfasse</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-06-02</p>
+    </article>
+    <article>
+      <h3><a href="https://borretti.me/article/language-pragmatics">Language Pragmatics Engineering</a></h3>
+      <p>De l'importance de l'ergonomie dans l'utilisation de certaines fonctionnalités, pour en faciliter l'adoption. Les exemples : le typage fort, les patterns où l'on sépare les IO du code métier, l'outillage du langage, le scaling de 1 Hz (la vitesse de travail d'un dev) à la prod, ...</p>
+      <p class="hashtags">#programming-language</p>
+      <p class="date">2023-06-03</p>
+    </article>
+    <article>
+      <h3><a href="https://github.com/TodePond/DreamBerd">perfect programming language</a></h3>
+      <p>Un langage troll.</p>
+      <p class="hashtags">#lol #programming-language</p>
+      <p class="date">2023-06-06</p>
+    </article>
+    <article>
+      <h3><a href="https://factoryfactoryfactory.net/">Modern Software Development Summarized</a></h3>
+      <p>Satire</p>
+      <p class="hashtags">#lol #oop #design-patterns</p>
+      <p class="date">2023-06-06</p>
+    </article>
+    <article>
+      <h3><a href="https://xeiaso.net/blog/anything-message-queue">Anything can be a message queue if you use it wrongly enough</a></h3>
+      <p>Au lieu de payer les coûts exorbitants d'egress d'AWS, pourquoi ne pas créer une stack custom qui envoie et lit des paquets IPv6 depuis S3 ?</p>
+      <p class="hashtags">#lol #aws #network</p>
+      <p class="date">2023-06-06</p>
+    </article>
+    <article>
+      <h3><a href="https://www.youtube.com/watch?v=JcJSW7Rprio">Harder Drive: hard drives we didn't want or need</a></h3>
+      <p>Vidéo humoristique de tom7 où il présente différentes façon de stocker des données : en jonglant à envoyer des pings contenant une payload à des serveurs de l'autre côté du globe, dans la configuration de lignes de milliers de parties de Tetris en parallèle, ou bien dans la minuscule mémoire d'une multitude de tests Covid assemblés en une seule mémoire unufiée.</p>
+      <p class="hashtags">#lol #network</p>
+      <p class="date">2023-06-06</p>
+    </article>
+    <article>
+      <h3><a href="https://m.youtube.com/watch?v=yqbgCcFlxqU">Inclusion des personnes LGBT+ dans la tech : comment passer à la vitesse supérieure ?</a></h3>
+      <p>Vidéo d'explications de quelques bases, très intéressante.</p>
+      <p class="hashtags">#diversity</p>
+      <p class="date">2023-06-10</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/ZMklf0vUl18">Define Define</a></h3>
+      <p>TodePond est jne chaîne qui parle de codes pour des simulations, avec un style particulier. Ce dernier épisode a une tournure très intéressante.</p>
+      <p class="hashtags">#trippy #definitions</p>
+      <p class="date">2023-06-11</p>
+    </article>
+    <article>
+      <h3><a href="https://humantalks.com/talks/1880-la-gestion-des-erreurs">La gestion des erreurs</a></h3>
+      <p>Un talk donné par Robin Moussu, et qui parlait notemment des différentes syntaxes/sémantiques que les langages de programmation offrent pour la gestion des erreurs (code d'erreur, exception, ...). Mais pour choisir entre les différentes possibilités, j'aime bien la classification d'Eric Lippert avec ses <a href="https://ericlippert.com/2008/09/10/vexing-exceptions/">Vexing/Fatal/Boneheaded/Exogenous Exceptions</a>. Cela permet de mieux choisir entre <i>checked</i> et <i>unchecked exceptions</i> en Java (je ne retrouve plus l'article qui expliquait si bien la <b>bonne</b> stratégie à employer et les erreurs de la stdlib, <a href="https://testing.googleblog.com/2009/09/checked-exceptions-i-love-you-but-you.html?m=1">celui-ci de Miško Hevery sur le Google Testing Blog</a> avec <a href="https://phauer.com/2015/checked-exceptions-are-evil/">celui-là</a> peuvent faire l'affaire). Et pour une vision encore plus complète du problème et de son évolution, l'excellent <a href="https://joeduffyblog.com/2016/02/07/the-error-model/">The Error Model</a> de Joe Duffy sur son expérience du projet Midori à Microsoft.</p>
+      <p class="hashtags">#error-handling</p>
+      <p class="date">2023-06-14</p>
+    </article>
+    <article>
+      <h3><a href="https://pkolaczk.github.io/server-slower-than-a-laptop/">How a Single Line of Code Made a 24-core Server Slower Than a Laptop</a></h3>
+      <p>Un Arc (en Rust) était update depuis une floppée de cores sur 2 différents procs, écroulant les perfs.</p>
+      <p class="hashtags">#perf #rust</p>
+      <p class="date">2023-06-18</p>
+    </article>
+    <article>
+      <h3><a href="https://notebook.drmaciver.com/posts/2022-06-05-14:53.html">Getting to know the right people</a></h3>
+      <p>De l'importance de se construire un réseau.</p>
+      <p class="hashtags">#life</p>
+      <p class="date">2023-06-18</p>
+    </article>
+    <article>
+      <h3><a href="https://www.teamten.com/lawrence/writings/coding-machines/">Coding Machines</a></h3>
+      <p>Une nouvelle semi-horrifique d'informatique, rapellant <a href="">Trusting Trust de Ken Thompson</a> (papa d'Unix et du langage C, plus tard de Go).</p>
+      <p class="hashtags">#story</p>
+      <p class="date">2023-06-19</p>
+    </article>
+    <article>
+      <h3><a href="https://ntietz.com/blog/introducing-hurl/">Introducing Hurl, a terrible (but cute) idea for a language</a></h3>
+      <p>Un langage où on peut définir des variables et des lambdas, et sinon seulement raise et try-catch des exceptions (et les rewind). Ça suffit pour implémenter les structures classiques de control flow, à l'instar de Python.</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-06-19</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/YE9rEQAGpLw">Make Your Renders Unnecessarily Complicated</a></h3>
+      <p>Créer un simulateur de rendu (sous forme d'une caméra) dans le moteur de rendu de Blender : mille fois trop compliqué, mais stylé !</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-06-23</p>
+    </article>
+    <article>
+      <h3><a href="https://datatracker.ietf.org/doc/html/draft-ietf-uuidrev-rfc4122bis">Universally Unique IDentifiers (UUID)</a></h3>
+      <p>Un brouillon pour ajouter de nouveaux UUID, avec des propriétés intéressantes, à la RFC originale.</p>
+      <p class="hashtags">#format</p>
+      <p class="date">2023-06-25</p>
+    </article>
+    <article>
+      <h3><a href="https://computers-are-fast.github.io/">Do you know how much your computer can do in a second?</a></h3>
+      <p>Une ségie de questions où il faut trouver l'ordre de magnitude de la fréquence à laquelle peut tourner des exemples de code triviaux.</p>
+      <p class="hashtags">#perf</p>
+      <p class="date">2023-06-25</p>
+    </article>
+    <article>
+      <h3><a href="https://www.noulakaz.net/2007/03/18/a-regular-expression-to-check-for-prime-numbers/">A regular expression to check for prime numbers</a></h3>
+      <p>Très peu performant, mais montre bien la puissance de cet outil. Le backtracking va itérativement tester tous les multiples possibles.</p>
+      <p class="hashtags">#lol #regex</p>
+      <p class="date">2023-06-26</p>
+    </article>
+    <article>
+      <h3><a href="http://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html?m=1">A Brief, Incomplete, and Mostly Wrong History of Programming Languages</a></h3>
+      <p>A part les dates et les noms, que des blagues.</p>
+      <p class="hashtags">#lol</p>
+      <p class="date">2023-06-27</p>
+    </article>
+    <article>
+      <h3><a href="https://rigtorp.se/ringbuffer/">Optimizing a ring buffer for throughput</a></h3>
+      <p>Optimiser l'utilisation des atomic pour éviter de provoquer trop de chache misses (éviction de l'atomic dans les autres CPU).</p>
+      <p class="hashtags">#perf</p>
+      <p class="date">2023-06-28</p>
+    </article>
+    <article>
+      <h3><a href="https://software.rajivprab.com/2018/04/29/myths-programmers-believe-about-cpu-caches/">Myths Programmers Believe about CPU Caches</a></h3>
+      <p>Petite présentation du protocole qui permet au hardware de garantir la cohérence des caches L1 à L3 entre différents cores.</p>
+      <p class="hashtags">#hardware</p>
+      <p class="date">2023-06-28</p>
+    </article>
+    <article>
+      <h3><a href="https://owen.cafe/posts/six-times-faster-than-c/">{n} times faster than C - part one</a></h3>
+      <p>Micro-optimisation d'une simple boucle et comparaison avec ce que Clang et GCC ont naïvement généré. La partie 2 va explorer l'efficience des cache-lines.</p>
+      <p class="hashtags">#perf</p>
+      <p class="date">2023-07-07</p>
+    </article>
+    <article>
+      <h3><a href="https://www.bitecode.dev/p/relieving-your-python-packaging-pain">Relieving your Python packaging pain</a></h3>
+      <p>100% d'accord sur la méthode pour éviter tous les problèmes évitables.</p>
+      <p class="hashtags">#python</p>
+      <p class="date">2023-07-18</p>
+    </article>
+    <article>
+      <h3><a href="https://pikchr.org/home/doc/trunk/doc/userman.md">Pikchr: A PIC-like markup language for diagrams in technical documentation</a></h3>
+      <p>Un langage textuel pour générer des diagrammes, avec un layout manuel très permissif. Il est notament utilisé pour générer les railroad diagrammes de SQLite (<a href="https://sqlite.org/lang_select.html">exemple</a>). Version <a href="https://pikchr.org/home/pikchrshow">online</a>.</p>
+      <p class="hashtags">#diagram</p>
+      <p class="date">2023-07-25</p>
+    </article>
+    <article>
+      <h3><a href="https://gist.github.com/chitchcock/1281611">Stevey's Google Platforms Rant</a></h3>
+      <p>Il explique que le succès d'Amazon AWS et de Microsoft est d'avoir crée des plateformes où créer des produits, là où Google peine encore à créer ses produits sans plateforme.</p>
+      <p class="hashtags">#architecture</p>
+      <p class="date">2023-07-25</p>
+    </article>
+    <article>
+      <h3><a href="https://tailscale.com/blog/how-nat-traversal-works/">How NAT traversal works</a></h3>
+      <p>Excellente explication sur le blog de TailScale (WireGuard) qui explique comment NAT impacte les connexions pair-à-pair sur et à travers les réseaux.</p>
+      <p class="hashtags">#network</p>
+      <p class="date">2023-08-05</p>
+    </article>
+    <article>
+      <h3><a href="https://bloodknife.com/improving-strategic-outcomes-for-the-black-crusade-xiv/">Improving Strategic Outcomes for the 14th Black Crusade with Applied Management Methodologies</a></h3>
+      <p>Une étude faussement sérieuse des difficultés managériales et organisationnelles des légions du Chaos dans Warhammer 40K.</p>
+      <p class="hashtags">#lol #40k</p>
+      <p class="date">2023-08-06</p>
+    </article>
+    <article>
+      <h3><a href="http://tpierrain.blogspot.com/2020/11/hexagonal-or-not-hexagonal.html">Hexagonal or not Hexagonal?</a></h3>
+      <p>Réflexions intéressantes sur les formes et l'utilité des Anti-Corruption Layer en Hexagonal/DDD, et plus générallement sur les intérêts ("facets") du pattern Hexagonal selon les interprétations qu'on en fait.</p>
+      <p class="hashtags">#ddd #hexagonal #architecture</p>
+      <p class="date">2023-08-09</p>
+    </article>
+    <article>
+      <h3><a href="https://kenschutte.com/python-swap-ints/">swap_8_and_9: How a simple import can modify the Python interpreter</a></h3>
+      <p>En CPython les int de plus fréquents (de -5 à 256) existent toujours en mémoire, ils ne sont jamais créés ou détruits (des <i>immortals</i>). Donc comme des constantes on peut les intervertir pour rendre fou les gens.</p>
+      <p class="hashtags">#lol #python #evil</p>
+      <p class="date">2023-08-13</p>
+    </article>
+    <article>
+      <h3><a href="https://www.bitecode.dev/p/nobody-ever-paid-me-for-code">Nobody ever paid me for code</a></h3>
+      <p>Conseil de posture pour sa carrière : parler solution plutôt que technique avec un client.</p>
+      <p class="hashtags">#career</p>
+      <p class="date">2023-08-15</p>
+    </article>
+    <article>
+      <h3><a href="https://htmx.org/essays">htmx - Essays</a></h3>
+      <p>Une collection d'articles par les personnes ayant crée htmx, qui clarifient ce qu'est une API REST (aucun rapport avec JSON), le couplage avec les applications, les problèmes du tout-javascript, l'ergonomie des SPA/MPA, ...</p>
+      <p class="hashtags">#html #rest #api #hateoas</p>
+      <p class="date">2023-08-17</p>
+    </article>
+    <article>
+      <h3><a href="https://open.spotify.com/episode/4gsyPKLIRFTfHaEqaYqXfs">ECKHART TOLLE - Le pouvoir du moment présent</a></h3>
+      <p>Dispo aussi sur Youtube.<br/>TL;DR: vivez le moment présent, focalisez-vous sur vos sensations, plutôt que de ruminer le passé ou de vous inquiéter des futurs possibles. #mindfulness</p>
+      <p class="hashtags">#philosophie</p>
+      <p class="date">2023-08-18</p>
+    </article>
+    <article>
+      <h3><a href="https://lwn.net/Articles/939981/">GIL removal and the Faster CPython project</a></h3>
+      <p>Un résumé à date des débats, groupes, positions et difficultés causés par le projet de retirer le GIL de Python. Le GIL est une facilité pour écrire le code multithread de l'interpréteur CPython, qui 20 ans plus tard limite gravement les perfs multithread.</p>
+      <p class="hashtags">#python #perf</p>
+      <p class="date">2023-08-19</p>
+    </article>
+    <article>
+      <h3><a href="https://www.bitecode.dev/p/asyncio-twisted-tornado-gevent-walk">Asyncio, twisted, tornado, gevent walk into a bar...</a></h3>
+      <p>Une présentation de ce qu'est l'async en python, et des frameworks historiques qui ont contribué à sa maturation. Et la conclusion rappelle qu'on n'en a rarement besoin</p>
+      <p class="hashtags">#python #async #historic</p>
+      <p class="date">2023-08-22</p>
+    </article>
+    <article>
+      <h3><a href="https://pyvideo.org/pycon-fr-2023/je-suis-nulle.html">Je suis nul.le</a></h3>
+      <p>Très bon talk, son message positif est bienvenu. Dommage pour la qualité sonore.</p>
+      <p class="hashtags">#estime-de-soi #syndrome-imposteur</p>
+      <p class="date">2023-08-28</p>
+    </article>
+    <article>
+      <h3><a href="https://youtu.be/qIcM21l61TE">How Designers Destroyed the World - Mike Monteiro at USI</a></h3>
+      <p>S'applique très très bien au métier d'ingénieur aussi.</p>
+      <p class="hashtags">#design #ethics</p>
+      <p class="date">2023-08-29</p>
     </article>
       <!--
     <article>
@@ -562,6 +833,6 @@
       -->
   </body>
   <footer>
-  	<a href="https://fr.wikipedia.org/wiki/Licence_Creative_Commons">Licence CC-BY-NC-SA</a>
+    <p><a href="https://fr.wikipedia.org/wiki/Licence_Creative_Commons">Licence CC-BY-NC-SA</a> -- Lenormand Julien</p>
   </footer>
 </html>
