@@ -1,0 +1,33 @@
+blague : oil shell
+
+intro : jenkins CI (Groovy) interpolation to execute shell commands to ask Docker containers to run commands
+
+recommander : https://www.shellcheck.net/
+
+petit tour d'horizon de ce dont on ne parlera pas mais qui est important quand on veut utiliser des variables :
+- shells: sh versus bash
+- toutes les différentes variables https://stackoverflow.com/a/5163260/11384184
+- Parameter Substitution https://tldp.org/LDP/abs/html/parameter-substitution.html
+- Parameter expansion
+  - diff : https://unix.stackexchange.com/a/125025/383566
+  - @A : https://unix.stackexchange.com/a/397588
+  - doc: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+- que la doc est pas pratique
+- commande "test" vs [] vs [[ ]]
+
+visualisation du fonctionnement d'un shell : https://aosabook.org/en/v1/bash.html
+
+demo
+- echo simple
+- export et unset
+- undefined versus empty variable
+- no quote
+- single quote versus double quote
+- quote in $()
+- $"" in bash
+- string concatenation (add space)
+
+groovy-string-interpolation.png
+groovy.md
+
+conclusion : évitez de devoir le faire, nid à galères
