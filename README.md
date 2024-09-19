@@ -2,3 +2,4 @@
 
 My personal website : [https://lenormand-julien.fr/](https://lenormand-julien.fr/)
 
+Available also on GitHub Pages : [https://lenormju.github.io/lenormand-julien.fr/](https://lenormju.github.io/lenormand-julien.fr/)
