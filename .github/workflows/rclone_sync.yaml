@@ -15,4 +15,6 @@ jobs:
         run: sudo apt install rclone -y --no-install-recommends
 
       - name: Run rclone
-        run: rclone --version ; rclone --help
+        # as of 2025-11-27, the version installed is: v1.60.1-DEV
+        # based on https://stackoverflow.com/a/78799177/11384184
+        run: rclone sync --help ; rclone copyto --help ; rclone ls --help ; rclone lsd --help ; export OBSCURED_PASSWORD="$(printf '%s' "${PASSWORD}" | rclone obscure -)" ; rclone lsd ':webdav,url=https://'"${HOSTNAME}"',user='"${USER}"',pass='"${OBSCURED_PASSWORD}"':'
