@@ -8,7 +8,7 @@ on:
 jobs:
   rclone:
     runs-on: ubuntu-latest
-    env: main
+    environment: main
     steps:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6.0.0, latest as of 2025-11-20
 
