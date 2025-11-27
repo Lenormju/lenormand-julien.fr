@@ -1,0 +1,21 @@
+name: Rclone Sync
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rclone:
+    runs-on: ubuntu-latest
+    environment: main
+    steps:
+      - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6.0.0, latest as of 2025-11-20
+
+      - name: Install rclone
+        run: sudo apt install rclone -y --no-install-recommends
+
+      - name: Run rclone
+        # as of 2025-11-27, the version installed is: v1.60.1-DEV
+        # based on https://stackoverflow.com/a/78799177/11384184
+        run: OBSCURED_PASSWORD="$(printf '%s' "${{ secrets.WEBDAV_PASSWORD }}" | rclone obscure -)" && rclone sync 'www' ':webdav,url="https://'"${{ secrets.WEBDAV_SERVER_HOSTNAME }}"'",user='"${{ secrets.WEBDAV_USERNAME }}"',pass='"${OBSCURED_PASSWORD}"':www'
