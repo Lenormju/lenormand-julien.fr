@@ -1,0 +1,18 @@
+name: Rclone Sync
+
+on:
+  push:
+    branches:
+      - webdav
+
+jobs:
+  rclone:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install rclone
+        run: apt install rclone -y --no-install-recommends
+
+      - name: Run rclone
+        run: rclone --version ; rclone --help
