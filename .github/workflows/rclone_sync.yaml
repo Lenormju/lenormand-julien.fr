@@ -13,7 +13,10 @@ jobs:
       - uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3  # v6.0.0, latest as of 2025-11-20
 
       - name: Install rclone
-        run: sudo apt install rclone -y --no-install-recommends
+        run: |
+          sudo apt-get update  # ensure Azure cache is up-to-date
+          apt-cache policy rclone
+          sudo apt install rclone=1.60.1+dfsg-3ubuntu0.24.04.5 -y --no-install-recommends
 
       - name: Run rclone
         # as of 2025-11-27, the version installed is: v1.60.1-DEV
